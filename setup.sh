@@ -10,5 +10,6 @@ sudo make clean install
 mkdir ~/Downloads
 cp .background.png ~/Downloads/background.png
 sudo chsh -s $(which zsh)
-sudo ln -s /var/service/NetworkManager/ /etc/sv
-sudo ln -s /var/service/greetd /etc/sv
+sudo ln -s /etc/sv/dbus/ /var/service
+sudo ln -s /etc/sv/NetworkManager/ /var/service
+sudo ln -s /etc/sv/greetd/ /var/service
