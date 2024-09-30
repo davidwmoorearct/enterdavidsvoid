@@ -1,4 +1,4 @@
-sudo xbps-install -Sy $(cat packages.txt)
+sh installer.sh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 cp .xinitrc ~/
 cp .zshrc ~/
