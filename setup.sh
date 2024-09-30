@@ -8,7 +8,7 @@ sudo make clean install
 cd ~/david-dwm/davidstatus
 sudo make clean install
 mkdir ~/Downloads
-cp .background.png ~/Downloads/background.png
+cp ./background.png ~/Downloads/background.png
 sudo chsh -s $(which zsh)
 sudo ln -s /etc/sv/dbus/ /var/service
 sudo ln -s /etc/sv/NetworkManager/ /var/service
