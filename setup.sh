@@ -5,7 +5,7 @@ cp .zshrc ~/
 sudo cp config.toml /etc/greetd/config.toml
 cd dwm
 sudo make clean install
-cd ~/david-dwm/davidstatus
+cd ~/enterdavidsvoid/davidstatus
 sudo make clean install
 mkdir ~/Downloads
 cp ./background.png ~/Downloads/background.png
