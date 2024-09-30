@@ -101,8 +101,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias sysupdate="sudo xbps-install -Suy"
 alias xin="sudo xbps-install -Suy"
-alias xq="sudo xbps-query -s"
+alias xq="xbps-query -Rs"
 alias mci="sudo make clean install"
 alias xisrc="/home/davidwmoore/void-packages/xbps-src pkg -f"
-
+alias ls="ls -A"
+alias xrem="sudo xbps-remove"
 if [ -e /home/davidwmoore/.nix-profile/etc/profile.d/nix.sh ]; then . /home/davidwmoore/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

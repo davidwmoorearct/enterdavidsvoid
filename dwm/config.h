@@ -32,7 +32,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact = 0.6; /* factor of master area size [0.05..0.95] */
+static const float mfact = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster = 1;    /* number of clients in master area */
 static const int resizehints =
     1; /* 1 means respect size hints in tiled resizals */
@@ -57,7 +57,7 @@ static const Layout layouts[] = {
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd)                                                             \
   {                                                                            \
-    .v = (const char *[]) { "/bin/zsh", "-c", cmd, NULL }                       \
+    .v = (const char *[]) { "/bin/sh", "-c", cmd, NULL }                       \
   }
 
 /* commands */
@@ -66,22 +66,17 @@ static char dmenumon[2] =
 static const char *dmenucmd[] = {
     "dmenu_run", "-m",      dmenumon, "-fn",    dmenufont, "-nb",     col_gray1,
     "-nf",       col_gray3, "-sb",    col_cyan, "-sf",     col_gray4, NULL};
+static const char *rofi[] = {"rofi", "-show", "drun", NULL};
+static const char *passwd[] = {"rofi-rbw", NULL};
 static const char *termcmd[] = {"alacritty", NULL};
 static const char *qutebrowser[] = {"qutebrowser", NULL};
-static const char *docs[] = {"void-docs", NULL};
-static const char *slock[] = {"slock", NULL};
 static const Key keys[] = {
     /* modifier                     key        function        argument */
-    {MODKEY, XK_space, spawn, SHCMD("rofi -show drun")},
+    {MODKEY, XK_space, spawn, {.v = rofi}},
     {MODKEY, XK_Return, spawn, {.v = termcmd}},
     {MODKEY | Mod1Mask, XK_space, spawn, {.v = qutebrowser}},
-    {MODKEY | Mod1Mask, XK_h, spawn, {.v = docs}},
-    {Mod1Mask | ControlMask, XK_Delete, spawn, {.v = slock}},
-    {MODKEY | ControlMask | Mod1Mask, XK_Return,spawn, SHCMD("sudo reboot")},
-    {MODKEY | Mod1Mask | ControlMask, XK_0, spawn, SHCMD("sudo shutdown")},
-    {MODKEY, XK_b, spawn, SHCMD("amixer set Master 10%+")},
-    {MODKEY, XK_v, spawn, SHCMD("amixer set Master 10%-")},
-    {MODKEY | Mod1Mask | ControlMask | ShiftMask, XK_l, spawn, SHCMD("qutebrowser linkedin.com")},
+    {ControlMask, XK_Tab, spawn, {.v = passwd}},
+    {MODKEY, XK_b, togglebar, {0}},
     {MODKEY, XK_j, focusstack, {.i = +1}},
     {MODKEY, XK_k, focusstack, {.i = -1}},
     {MODKEY, XK_i, incnmaster, {.i = +1}},
