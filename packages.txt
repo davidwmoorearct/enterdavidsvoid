@@ -156,6 +156,7 @@ gjs
 glib
 glib-networking
 glibc
+glibc-32bit
 glibc-devel
 glibc-locales
 glibmm2.68
@@ -265,15 +266,18 @@ less
 libICE
 libSM
 libX11
+libX11-32bit
 libX11-devel
 libXScrnSaver
 libXau
+libXau-32bit
 libXau-devel
 libXaw
 libXcomposite
 libXcursor
 libXdamage
 libXdmcp
+libXdmcp-32bit
 libXdmcp-devel
 libXext
 libXext-devel
@@ -357,6 +361,7 @@ libdisplay-info
 libdjvulibre
 libdmapsharing
 libdrm
+libdrm-32bit
 libdvdcss
 libdvdread
 libedit
@@ -365,6 +370,7 @@ libei
 libelf
 libelogind
 libepoxy
+liberation-fonts-ttf
 libespeak-ng
 libev
 libevdev
@@ -381,6 +387,7 @@ libfreerdp3
 libfreerdp3-server
 libgbm
 libgcc
+libgcc-32bit
 libgcc-devel
 libgcrypt
 libgdm
@@ -390,6 +397,7 @@ libgimp
 libgirepository
 libglapi
 libglvnd
+libglvnd-32bit
 libgme
 libgomp
 libgpg-error
@@ -475,6 +483,7 @@ libpaper
 libparted
 libpcap
 libpciaccess
+libpciaccess-32bit
 libpcre
 libpcre2
 libpeas
@@ -531,6 +540,7 @@ libssh
 libssh2
 libssl3
 libstdc++
+libstdc++-32bit
 libstdc++-devel
 libsvt-av1
 libswresample6
@@ -573,9 +583,11 @@ libxapian
 libxatracker
 libxbps
 libxcb
+libxcb-32bit
 libxcb-devel
 libxcrypt
 libxcrypt-compat
+libxcrypt-compat-32bit
 libxcrypt-devel
 libxcvt
 libxkbcommon
@@ -604,6 +616,7 @@ linux6.6
 lmdb
 loupe
 lowdown
+lsof
 lua51
 lua51-lpeg
 lua53
@@ -779,6 +792,8 @@ sratom
 st
 st-terminfo
 startup-notification
+steam
+steam-udev-rules
 sudo
 sushi
 taglib
@@ -816,6 +831,9 @@ void-artwork
 void-docs
 void-docs-browse
 void-live-audio
+void-repo-multilib
+void-repo-multilib-nonfree
+void-repo-nonfree
 volume_key
 vte3-gtk4
 vulkan-loader

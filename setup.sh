@@ -8,3 +8,5 @@ sudo make clean install
 cd .
 cd davidstatus
 sudo make clean install
+mkdir ~/Downloads
+cp background.png ~/Downloads/background.png
