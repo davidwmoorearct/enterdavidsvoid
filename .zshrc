@@ -99,7 +99,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias sysupdate="sudo xbps-install -Suy"
 alias xin="sudo xbps-install -Suy"
 alias xq="xbps-query -Rs"
 alias mci="sudo make clean install"
