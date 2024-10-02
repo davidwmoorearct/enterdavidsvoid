@@ -12,9 +12,12 @@ curl
 dex
 dmenu
 elogind
+fastfetch
+fd
 feh
 firefox
 fprintd
+fzf
 gcc
 git
 github-cli
@@ -25,6 +28,7 @@ grub-i386-efi
 grub-x86_64-efi
 htop
 inetutils-ifconfig
+jq
 lazygit
 libX11-devel
 libXft-devel
@@ -34,6 +38,7 @@ libdrm-32bit
 libgcc-32bit
 libglvnd-32bit
 libstdc++-32bit
+lua
 lvm2
 make
 mdadm
@@ -41,11 +46,9 @@ mosh
 nano
 neovim
 nerd-fonts
-nerd-fonts-otf
-nerd-fonts-symbols-ttf
-nerd-fonts-ttf
 nix
 nmap
+openh264
 patch
 pipewire
 python3-pip
@@ -53,6 +56,7 @@ python3-pipx
 qt5-wayland
 qutebrowser
 rbw
+ripgrep
 rofi
 rofi-rbw
 slock
@@ -60,6 +64,7 @@ slstatus
 speedtest-cli
 st
 steam
+sunshine
 tuigreet
 turnstile
 void-docs-browse
@@ -70,6 +75,7 @@ void-repo-nonfree
 wofi
 xautolock
 xclip
+xdg-utils
 xdotool
 xf86-input-mtrack
 xmirror
@@ -77,3 +83,5 @@ xorg
 xtools
 zig
 zsh
+zsh-autosuggestions
+zsh-syntax-highlighting
