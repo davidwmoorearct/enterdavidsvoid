@@ -14,6 +14,7 @@ dmenu
 elogind
 feh
 firefox
+fprintd
 gcc
 git
 github-cli
@@ -28,6 +29,7 @@ lazygit
 libX11-devel
 libXft-devel
 libXinerama-devel
+libXrandr-devel
 libdrm-32bit
 libgcc-32bit
 libglvnd-32bit
@@ -44,6 +46,7 @@ nerd-fonts-symbols-ttf
 nerd-fonts-ttf
 nix
 nmap
+patch
 pipewire
 python3-pip
 python3-pipx
@@ -68,6 +71,7 @@ wofi
 xautolock
 xclip
 xdotool
+xf86-input-mtrack
 xmirror
 xorg
 xtools

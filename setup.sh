@@ -7,6 +7,8 @@ cd dwm
 sudo make clean install
 cd ~/enterdavidsvoid/davidstatus
 sudo make clean install
+cd ~/enterdavidsvoid/slock/
+sudo make clean install
 mkdir ~/Downloads
 cp background.png ~/Downloads/background.png
 sudo chsh -s $(which zsh)
