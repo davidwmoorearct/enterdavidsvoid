@@ -1,5 +1,5 @@
 /* See LICENSE file for copyright and license details. */
-
+#include <X11/XF86keysym.h>
 /* appearance */
 static const unsigned int borderpx = 1; /* border pixel of windows */
 static const unsigned int snap = 32;    /* snap pixel */
@@ -32,7 +32,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact = 0.6; /* factor of master area size [0.05..0.95] */
+static const float mfact = 0.5; /* factor of master area size [0.05..0.95] */
 static const int nmaster = 1;    /* number of clients in master area */
 static const int resizehints =
     1; /* 1 means respect size hints in tiled resizals */
@@ -70,6 +70,7 @@ static const char *termcmd[] = {"alacritty", NULL};
 static const char *qutebrowser[] = {"qutebrowser", NULL};
 static const char *docs[] = {"void-docs", NULL};
 static const char *slock[] = {"slock", NULL};
+static const char *ranger[] = {"ranger", NULL};
 static const Key keys[] = {
     /* modifier                     key        function        argument */
     {MODKEY, XK_space, spawn, SHCMD("rofi -show drun")},
@@ -79,8 +80,10 @@ static const Key keys[] = {
     {Mod1Mask | ControlMask, XK_Delete, spawn, {.v = slock}},
     {MODKEY | ControlMask | Mod1Mask, XK_Return,spawn, SHCMD("sudo reboot")},
     {MODKEY | Mod1Mask | ControlMask, XK_0, spawn, SHCMD("sudo shutdown")},
-    {MODKEY, XK_b, spawn, SHCMD("amixer set Master 10%+")},
-    {MODKEY, XK_v, spawn, SHCMD("amixer set Master 10%-")},
+    {MODKEY, XK_v, spawn, SHCMD("pactl -- set-sink-volume 2 +10%")},
+    {MODKEY,XK_b, spawn, SHCMD("pactl -- set-sink-volume 2 -10%")},
+    {Mod1Mask, XK_s, spawn, SHCMD("scrot")},
+    {MODKEY, XK_r, spawn, {.v = ranger}},
     {MODKEY | Mod1Mask | ControlMask | ShiftMask, XK_l, spawn, SHCMD("qutebrowser linkedin.com")},
     {MODKEY, XK_j, focusstack, {.i = +1}},
     {MODKEY, XK_k, focusstack, {.i = -1}},

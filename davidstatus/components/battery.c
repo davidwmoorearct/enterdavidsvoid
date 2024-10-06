@@ -58,7 +58,7 @@
 		} map[] = {
 			{ "Charging",    "+" },
 			{ "Discharging", "-" },
-			{ "Full",        "o" },
+			{ "Full",        "F" },
 			{ "Not charging", "o" },
 		};
 		size_t i;
