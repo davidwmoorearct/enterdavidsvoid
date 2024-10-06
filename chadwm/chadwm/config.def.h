@@ -154,7 +154,7 @@ static const Key keys[] = {
         SHCMD("maim --select | xclip -selection clipboard -t image/png")},
 
     { MODKEY,                           XK_space,       spawn,          SHCMD("rofi -show drun") },
-    { MODKEY,                           XK_Return,  spawn,            SHCMD("alacritty")},
+    { MODKEY,                           XK_Return,  spawn,            SHCMD("st")},
 
     // toggle stuff
     { MODKEY,                           XK_b,       togglebar,      {0} },
@@ -247,7 +247,10 @@ static const Key keys[] = {
     {MODKEY | Mod1Mask, XK_h, spawn, {.v = docs}},
     {Mod1Mask | ControlMask, XK_Delete, spawn, {.v = slock}},
     {MODKEY | Mod1Mask, XK_e, spawn, SHCMD("eww open eww")},
-    {MODKEY | Mod1Mask | ControlMask | ShiftMask, XK_o, spawn, SHCMD("qutebrowser outlook.com")},
+    {MODKEY | Mod1Mask | ControlMask | ShiftMask, XK_l, spawn, SHCMD("qutebrowser linkedin.com")},
+    {MODKEY | Mod1Mask, XK_c, spawn, SHCMD("ranger")},
+    {MODKEY | ControlMask, XK_x, spawn, SHCMD("nmtui")},
+    {ControlMask, XK_Tab, spawn, SHCMD("rofi-rbw") },
     TAGKEYS(                            XK_1,                       0)
     TAGKEYS(                            XK_2,                       1)
     TAGKEYS(                            XK_3,                       2)
