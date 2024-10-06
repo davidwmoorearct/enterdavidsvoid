@@ -62,6 +62,7 @@ static const char *passwd[] = {"rofi-rbw", NULL};
 static const char *termcmd[] = {"alacritty", NULL};
 static const char *qutebrowser[] = {"qutebrowser", NULL};
 static const char *slock[] = {"slock", NULL};
+static const char *audio[] = {"pavucontrol", NULL};
 static const Key keys[] = {
     /* modifier                     key        function        argument */
     {MODKEY, XK_space, spawn, {.v = rofi}},
@@ -69,6 +70,7 @@ static const Key keys[] = {
     {MODKEY | Mod1Mask, XK_space, spawn, {.v = qutebrowser}},
     {ControlMask, XK_Tab, spawn, {.v = passwd}},
     {ControlMask | Mod1Mask, XK_Delete, spawn, {.v = slock}},
+    {MODKEY | ControlMask, XK_a, spawn, {.v = audio}},
     {MODKEY, XK_b, togglebar, {0}},
     {MODKEY, XK_j, focusstack, {.i = +1}},
     {MODKEY, XK_k, focusstack, {.i = -1}},
