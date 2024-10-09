@@ -28,8 +28,8 @@ pkg_updates() {
 }
 
 battery() {
-	chargestat="$(cat /sys/class/power_supply/BAT1/status)"
-	get_capacity="$(cat /sys/class/power_supply/BAT1/capacity)"
+	chargestat="$(cat /sys/class/power_supply/BAT0/status)"
+	get_capacity="$(cat /sys/class/power_supply/BAT0/capacity)"
 	printf "^c$blue^   $get_capacity $chargestat"
 }
 

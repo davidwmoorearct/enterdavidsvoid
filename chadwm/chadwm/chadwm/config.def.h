@@ -3,14 +3,14 @@
 #include <X11/XF86keysym.h>
 
 /* appearance */
-static const unsigned int borderpx  = 0;        /* border pixel of windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int default_border = 0;   /* to switch back to default border after dynamic border resizing via keybinds */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
-static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
-static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov    = 10;       /* vert outer gap between windows and screen edge */
-static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
+static const unsigned int gappih    = 0;       /* horiz inner gap between windows */
+static const unsigned int gappiv    = 0;       /* vert inner gap between windows */
+static const unsigned int gappoh    = 0;       /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = 0;       /* vert outer gap between windows and screen edge */
+static const int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails,display systray on the 1st monitor,False: display systray on last monitor*/
@@ -18,7 +18,7 @@ static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int showtab            = showtab_auto;
 static const int toptab             = 1;        /* 0 means bottom tab */
-static const int floatbar           = 1;/* 1 means the bar will float(don't have padding),0 means the bar have padding */
+static const int floatbar           = 0;/* 1 means the bar will float(don't have padding),0 means the bar have padding */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int horizpadbar        = 5;
 static const int vertpadbar         = 11;
@@ -75,9 +75,14 @@ static const int tagschemes[] = {
     SchemeTag1, SchemeTag2, SchemeTag3, SchemeTag4, SchemeTag5
 };
 static const char *termcmd[] = {"alacritty", NULL};
-static const char *qutebrowser[] = {"qutebrowser", NULL};
+static const char *firefox[] = {"firefox", NULL};
 static const char *docs[] = {"void-docs", NULL};
 static const char *slock[] = {"slock", NULL};
+static const char *ranger[] = {"ranger", NULL};
+static const char *nmtui[] = {"nmtui", NULL};
+static const char *rbw[] = {"rofi-rbw", NULL};
+
+
 
 static const unsigned int ulinepad      = 5; /* horizontal padding between the underline and tag */
 static const unsigned int ulinestroke   = 2; /* thickness / height of the underline */
@@ -154,7 +159,7 @@ static const Key keys[] = {
         SHCMD("maim --select | xclip -selection clipboard -t image/png")},
 
     { MODKEY,                           XK_space,       spawn,          SHCMD("rofi -show drun") },
-    { MODKEY,                           XK_Return,  spawn,            SHCMD("alacritty")},
+    { MODKEY,                           XK_Return,  spawn,            SHCMD("st")},
 
     // toggle stuff
     { MODKEY,                           XK_b,       togglebar,      {0} },
@@ -215,7 +220,7 @@ static const Key keys[] = {
     { MODKEY,                           XK_m,       setlayout,      {.v = &layouts[2]} },
     { MODKEY|ControlMask,               XK_g,       setlayout,      {.v = &layouts[10]} },
     { MODKEY|ControlMask|ShiftMask,     XK_t,       setlayout,      {.v = &layouts[13]} },
-    { MODKEY,                           XK_space,   setlayout,      {0} },
+    { MODKEY|ControlMask,               XK_space,   setlayout,      {0} },
     { MODKEY|ControlMask,               XK_comma,   cyclelayout,    {.i = -1 } },
     { MODKEY|ControlMask,               XK_period,  cyclelayout,    {.i = +1 } },
     { MODKEY,                           XK_0,       view,           {.ui = ~0 } },
@@ -242,12 +247,15 @@ static const Key keys[] = {
     // hide & restore windows
     { MODKEY,                           XK_e,       hidewin,        {0} },
     { MODKEY|ShiftMask,                 XK_e,       restorewin,     {0} },
-    {MODKEY | Mod1Mask, XK_space, spawn, {.v = qutebrowser}},
-    {MODKEY | Mod1Mask | ControlMask, XK_b, spawn, SHCMD("qutebrowser app.ynab.com")},
+    {MODKEY | Mod1Mask, XK_space, spawn, {.v = firefox}},
+    {MODKEY | Mod1Mask | ControlMask, XK_b, spawn, SHCMD("firefox app.ynab.com")},
     {MODKEY | Mod1Mask, XK_h, spawn, {.v = docs}},
     {Mod1Mask | ControlMask, XK_Delete, spawn, {.v = slock}},
     {MODKEY | Mod1Mask, XK_e, spawn, SHCMD("eww open eww")},
-    {MODKEY | Mod1Mask | ControlMask | ShiftMask, XK_o, spawn, SHCMD("qutebrowser outlook.com")},
+    {MODKEY | Mod1Mask | ControlMask | ShiftMask, XK_l, spawn, SHCMD("firefox linkedin.com")},
+    {MODKEY | Mod1Mask, XK_c, spawn, SHCMD("st ranger")},
+    {MODKEY | ControlMask, XK_x, spawn, SHCMD("st nmtui")},
+    {ControlMask, XK_Tab, spawn, SHCMD("st rofi-rbw")},
     TAGKEYS(                            XK_1,                       0)
     TAGKEYS(                            XK_2,                       1)
     TAGKEYS(                            XK_3,                       2)

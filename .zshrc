@@ -78,8 +78,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-vi-mode)
-
+plugins=(git zsh-autosuggestions zsh-vi-mode zsh-syntax-highlighting)
+ZSH_TMUX_AUTOSTART=true
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -106,7 +106,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias xin="sudo xbps-install -Suy"
+alias xin="sudo xbps-install -Suvy"
 alias xq="xbps-query -Rs"
 alias mci="sudo make clean install"
 alias xisrc="/home/davidwmoore/void-packages/xbps-src pkg -f"
@@ -116,3 +116,7 @@ if [ -e /home/davidwmoore/.nix-profile/etc/profile.d/nix.sh ]; then . /home/davi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
