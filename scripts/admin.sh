@@ -1,6 +1,6 @@
 sudo useradd greeter -G video
 mkdir ~/Downloads
-ln -s ~/enterdavidsvoid/background.png ~/Downloads/background.png
+ln -s ~/enterdavidsvoid/config/background.png ~/Downloads/background.png
 fc-cache -fv
 sudo chsh -s $(which zsh)
 sudo ln -s /etc/sv/dbus/ /var/service

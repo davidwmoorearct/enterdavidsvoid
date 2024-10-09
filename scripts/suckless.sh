@@ -1,4 +1,4 @@
-sudo make clean install -C ~/enterdavidsvoid/chadwm/chadwm
-sudo make clean install -C ~/enterdavidsvoid/st
-sudo make clean install -C ~/enterdavidsvoid/slock
-sudo make clean install -C ~/enterdavidsvoid/scroll
+sudo make clean install -C ~/enterdavidsvoid/suckless/chadwm/chadwm
+sudo make clean install -C ~/enterdavidsvoid/suckless/st
+sudo make clean install -C ~/enterdavidsvoid/suckless/slock
+sudo make clean install -C ~/enterdavidsvoid/suckless/scroll
