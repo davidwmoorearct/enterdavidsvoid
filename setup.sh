@@ -12,6 +12,7 @@ sudo make clean install -C ~/enterdavidsvoid/slock
 sudo make clean install -C ~/enterdavidsvoid/scroll
 ln -s ~/enterdavidsvoid/.p10k.zsh ~/
 ln -s ~/enterdavidsvoid/chadwm/ ~/.config/
+cd ~
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestion
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/jeffreytse/zsh-vi-mode \$ZSH_CUSTOM/plugins/zsh-vi-mode
