@@ -1,1 +1,1 @@
-My personal Void Linux automated installer to re-create the same setup everywhere. 
+My dotfiles + suckless software repo to quickly and easily re-create the same setup on every machine, every time. 
