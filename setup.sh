@@ -1,5 +1,6 @@
-#!/usr/sbin/bash
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; > done 2>/dev/null &
+#!/bin/bash
+sudo -v
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 sh installer.sh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 sudo useradd greeter -G video
