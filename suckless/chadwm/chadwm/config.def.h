@@ -215,7 +215,7 @@ static const Key keys[] = {
     { MODKEY,                           XK_m,       setlayout,      {.v = &layouts[2]} },
     { MODKEY|ControlMask,               XK_g,       setlayout,      {.v = &layouts[10]} },
     { MODKEY|ControlMask|ShiftMask,     XK_t,       setlayout,      {.v = &layouts[13]} },
-    { MODKEY,                           XK_space,   setlayout,      {0} },
+    { MODKEY|ShiftMask,                           XK_space,   setlayout,      {0} },
     { MODKEY|ControlMask,               XK_comma,   cyclelayout,    {.i = -1 } },
     { MODKEY|ControlMask,               XK_period,  cyclelayout,    {.i = +1 } },
     { MODKEY,                           XK_0,       view,           {.ui = ~0 } },

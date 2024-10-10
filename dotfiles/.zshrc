@@ -110,6 +110,7 @@ source $ZSH/oh-my-zsh.sh
 alias xin="sudo xbps-install -Suvy"
 alias xq="xbps-query -Rs"
 alias mci="sudo make clean install"
+alias smci="source /home/davidwmoore/enterdavidsvoid/scripts/suckless.sh"
 alias xisrc="/home/davidwmoore/void-packages/xbps-src pkg -f"
 alias ls="ls -A"
 alias xrem="sudo xbps-remove"
