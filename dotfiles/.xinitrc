@@ -7,6 +7,10 @@ feh --bg-fill ~/Downloads/background.png &
 xset r rate 200 50 &
 picom &
 pipewire &
-
+cbatticon &
+kdeconnectd &
+ulauncher &
+keconnect-indicator &
 dash ~/.config/chadwm/scripts/bar.sh &
-while type chadwm >/dev/null; do chadwm && continue || break; done
+while type chadwm >/dev/null; do dbus-run-session chadwm && continue || break; done
+#exec awesome

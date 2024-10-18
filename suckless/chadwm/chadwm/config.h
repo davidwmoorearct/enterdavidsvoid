@@ -19,13 +19,13 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int showtab            = showtab_auto;
 static const int toptab             = 1;        /* 0 means bottom tab */
 static const int floatbar           = 0;/* 1 means the bar will float(don't have padding),0 means the bar have padding */
-static const int topbar             = 1;        /* 0 means bottom bar */
+static const int topbar             = 0;        /* 0 means bottom bar */
 static const int horizpadbar        = 5;
-static const int vertpadbar         = 11;
+static const int vertpadbar         = 20;
 static const int vertpadtab         = 35;
 static const int horizpadtabi       = 15;
 static const int horizpadtabo       = 15;
-static const int scalepreview       = 4;
+static const int scalepreview       = 5;
 static const int tag_preview        = 0;        /* 1 means enable, 0 is off */
 static const int colorfultag        = 1;        /* 0 means use SchemeSel for selected non vacant tag */
 static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
@@ -149,11 +149,10 @@ static const Key keys[] = {
 
     // screenshot fullscreen and cropped
     {MODKEY|ControlMask,                XK_u,       spawn,
-        SHCMD("maim | xclip -selection clipboard -t image/png")},
+        SHCMD("scrot ~/Pictures/Screenshots/%Y%m%d%H%M%S.png")},
     {MODKEY,                            XK_u,       spawn,
-        SHCMD("maim --select | xclip -selection clipboard -t image/png")},
-
-    { MODKEY,                           XK_space,       spawn,          SHCMD("rofi -show drun") },
+        SHCMD("scrot -s ~/Pictures/Screenshots/%Y%m%d%H%M%S.png")},
+    //{ MODKEY,                           XK_space,       spawn,          SHCMD("ulauncher") },
     { MODKEY,                           XK_Return,  spawn,            SHCMD("st")},
 
     // toggle stuff
@@ -231,7 +230,7 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,                 XK_w,       setborderpx,    {.i = default_border } },
 
     // kill dwm
-    { MODKEY|ControlMask,               XK_q,       spawn,        SHCMD("killall bar.sh chadwm") },
+    { MODKEY|ControlMask,               XK_q,       spawn,        SHCMD("pkill -u davidwmoore") },
 
     // kill window
     { MODKEY,                           XK_q,       killclient,     {0} },
@@ -248,8 +247,8 @@ static const Key keys[] = {
     {Mod1Mask | ControlMask, XK_Delete, spawn, {.v = slock}},
     {MODKEY | Mod1Mask, XK_e, spawn, SHCMD("eww open eww")},
     {MODKEY | Mod1Mask | ControlMask | ShiftMask, XK_l, spawn, SHCMD("qutebrowser linkedin.com")},
-    {MODKEY | Mod1Mask, XK_c, spawn, SHCMD("ranger")},
-    {MODKEY | ControlMask, XK_x, spawn, SHCMD("nmtui")},
+    {MODKEY | Mod1Mask, XK_c, spawn, SHCMD("st ranger")},
+    {MODKEY | ControlMask, XK_x, spawn, SHCMD("st nmtui")},
     {ControlMask, XK_Tab, spawn, SHCMD("rofi-rbw") },
     TAGKEYS(                            XK_1,                       0)
     TAGKEYS(                            XK_2,                       1)

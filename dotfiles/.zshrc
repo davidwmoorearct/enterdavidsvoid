@@ -1,4 +1,3 @@
-fastfetch
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -114,6 +113,8 @@ alias smci="source /home/davidwmoore/enterdavidsvoid/scripts/suckless.sh"
 alias xisrc="/home/davidwmoore/void-packages/xbps-src pkg -f"
 alias ls="ls -A"
 alias xrem="sudo xbps-remove"
+alias fps="flatpak search"
+alias fpi="flatpak install -y"
 if [ -e /home/davidwmoore/.nix-profile/etc/profile.d/nix.sh ]; then . /home/davidwmoore/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -122,3 +123,6 @@ if [ -e /home/davidwmoore/.nix-profile/etc/profile.d/nix.sh ]; then . /home/davi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Created by `pipx` on 2024-10-17 21:06:56
+export PATH="$PATH:/home/davidwmoore/.local/bin"
