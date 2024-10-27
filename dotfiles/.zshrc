@@ -126,3 +126,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # Created by `pipx` on 2024-10-17 21:06:56
 export PATH="$PATH:/home/davidwmoore/.local/bin"
+export XDG_CACHE_HOME="$HOME/.config"
+export EDITOR="hx"
+export VISUAL="hx"
+

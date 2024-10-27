@@ -75,7 +75,7 @@ static const int tagschemes[] = {
     SchemeTag1, SchemeTag2, SchemeTag3, SchemeTag4, SchemeTag5
 };
 static const char *termcmd[] = {"alacritty", NULL};
-static const char *qutebrowser[] = {"qutebrowser", NULL};
+static const char *browser[] = {"qutebrowser", NULL};
 static const char *docs[] = {"void-docs", NULL};
 static const char *slock[] = {"slock", NULL};
 
@@ -152,7 +152,7 @@ static const Key keys[] = {
         SHCMD("scrot ~/Pictures/Screenshots/%Y%m%d%H%M%S.png")},
     {MODKEY,                            XK_u,       spawn,
         SHCMD("scrot -s ~/Pictures/Screenshots/%Y%m%d%H%M%S.png")},
-    //{ MODKEY,                           XK_space,       spawn,          SHCMD("ulauncher") },
+    { MODKEY,                           XK_space,       spawn,          SHCMD("rofi -show drun") },
     { MODKEY,                           XK_Return,  spawn,            SHCMD("st")},
 
     // toggle stuff
@@ -241,12 +241,12 @@ static const Key keys[] = {
     // hide & restore windows
     { MODKEY,                           XK_e,       hidewin,        {0} },
     { MODKEY|ShiftMask,                 XK_e,       restorewin,     {0} },
-    {MODKEY | Mod1Mask, XK_space, spawn, {.v = qutebrowser}},
-    {MODKEY | Mod1Mask | ControlMask, XK_b, spawn, SHCMD("qutebrowser app.ynab.com")},
+    {MODKEY | Mod1Mask, XK_space, spawn, {.v = browser}},
+    {MODKEY | Mod1Mask | ControlMask, XK_b, spawn, SHCMD("nyxt app.ynab.com")},
     {MODKEY | Mod1Mask, XK_h, spawn, {.v = docs}},
     {Mod1Mask | ControlMask, XK_Delete, spawn, {.v = slock}},
     {MODKEY | Mod1Mask, XK_e, spawn, SHCMD("eww open eww")},
-    {MODKEY | Mod1Mask | ControlMask | ShiftMask, XK_l, spawn, SHCMD("qutebrowser linkedin.com")},
+    {MODKEY | Mod1Mask | ControlMask | ShiftMask, XK_l, spawn, SHCMD("nyxt linkedin.com")},
     {MODKEY | Mod1Mask, XK_c, spawn, SHCMD("st ranger")},
     {MODKEY | ControlMask, XK_x, spawn, SHCMD("st nmtui")},
     {ControlMask, XK_Tab, spawn, SHCMD("rofi-rbw") },
