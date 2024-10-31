@@ -74,7 +74,7 @@ static const Launcher launchers[] = {
 static const int tagschemes[] = {
     SchemeTag1, SchemeTag2, SchemeTag3, SchemeTag4, SchemeTag5
 };
-static const char *termcmd[] = {"alacritty", NULL};
+static const char *termcmd[] = {"st", NULL};
 static const char *browser[] = {"qutebrowser", NULL};
 static const char *docs[] = {"void-docs", NULL};
 static const char *slock[] = {"slock", NULL};
@@ -153,7 +153,7 @@ static const Key keys[] = {
     {MODKEY,                            XK_u,       spawn,
         SHCMD("scrot -s ~/Pictures/Screenshots/%Y%m%d%H%M%S.png")},
     { MODKEY,                           XK_space,       spawn,          SHCMD("rofi -show drun") },
-    { MODKEY,                           XK_Return,  spawn,            SHCMD("st")},
+    { MODKEY,                           XK_Return,  spawn,        {.v = termcmd}},
 
     // toggle stuff
     { MODKEY,                           XK_b,       togglebar,      {0} },

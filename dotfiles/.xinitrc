@@ -6,6 +6,7 @@ xbacklight -set 100 &
 feh --bg-fill ~/Downloads/background.png &
 xset r rate 200 50 &
 picom &
+xautolock -time 5 &
 pipewire &
 cbatticon &
 dash ~/.config/chadwm/scripts/bar.sh &
