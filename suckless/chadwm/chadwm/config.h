@@ -249,6 +249,7 @@ static const Key keys[] = {
     {MODKEY | Mod1Mask | ControlMask | ShiftMask, XK_l, spawn, SHCMD("nyxt linkedin.com")},
     {MODKEY | Mod1Mask, XK_c, spawn, SHCMD("st ranger")},
     {MODKEY | ControlMask, XK_x, spawn, SHCMD("st nmtui")},
+    {MODKEY |  Mod1Mask, XK_k, spawn, SHCMD("rofi -show calc -modi calc -no-show-match -no-sort -terse -no-history")},
     {ControlMask, XK_Tab, spawn, SHCMD("rofi-rbw") },
     TAGKEYS(                            XK_1,                       0)
     TAGKEYS(                            XK_2,                       1)
