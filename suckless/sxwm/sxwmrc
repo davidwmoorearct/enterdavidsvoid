@@ -1,0 +1,72 @@
+gaps : 0
+border_width : 1
+master_width : 50
+new_win_master : true
+bind : mod + return : "st"
+bind : mod + control + u : "scrot ~/Pictures/Screenshots/%Y%m%d%H%M%S.png"
+bind : mod + u : "scrot -s ~/Pictures/Screenshots/%Y%m%d%H%M%S.png"
+bind : mod + shift + q : quit
+bind : mod + shift + r : reload_config
+bind : mod + alt + space : "firefox --no-remote"
+bind : ctrl + alt + del : "slock"
+bind : mod + ctrl + alt + shift + l : "firefox linkedin.com"
+bind : mod + alt + c : "st ranger"
+bind : mod + ctrl + x : "st nmtui"
+bind : mod + space : "rofi -show drun"
+bind : mod + q : close_window
+bind : ctrl + alt + delete : "slock"
+bind : mod + alt + b : "rofi-rbw"
+bind : audiolowervolume : "/usr/bin/pactl set-sink-volume 0 -5%"
+bind : audioraisevolume : "/usr/bin/pactl set-sink-volume 0 +5%"
+bind : monbrightnessup : "/usr/bin/light -A 5"
+bind : monbrightnessdown : "/usr/bin/light -U 5"
+static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
+static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
+static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
+static const char *light_up[] = {"/usr/bin/light", "-A", "5", NULL};
+static const char *light_down[] = {"/usr/bin/light", "-U", "5", NULL};
+
+
+
+
+# Not my code. Thanks to the creator!
+can_swallow : "st"
+can_be_swallowed : "firefox", "rofi-rbw"
+motion_throttle         : 60 # Set to screen refresh rate for smoothest motions
+call : mod + j : focus_next
+call : mod + k : focus_prev
+scratchpad : mod + alt + 1 : create 1
+scratchpad : mod + alt + 2 : create 2
+scratchpad : mod + alt + 3 : create 3
+scratchpad : mod + alt + 4 : create 4
+
+scratchpad : mod + ctrl + 1 : toggle 1
+scratchpad : mod + ctrl + 2 : toggle 2
+scratchpad : mod + ctrl + 3 : toggle 3
+scratchpad : mod + ctrl + 4 : toggle 4
+
+scratchpad : mod + alt + shift + 1 : remove 1
+scratchpad : mod + alt + shift + 2 : remove 2
+scratchpad : mod + alt + shift + 3 : remove 3
+scratchpad : mod + alt + shift + 4 : remove 4
+call : mod + shift + f : fullscreen
+call : mod + shift + j : master_next
+call : mod + shift + k : master_previous
+workspace : mod + 1          : move 1
+workspace : mod + shift + 1  : swap 1
+workspace : mod + 2          : move 2
+workspace : mod + shift + 2  : swap 2
+workspace : mod + 3          : move 3
+workspace : mod + shift + 3  : swap 3
+workspace : mod + 4          : move 4
+workspace : mod + shift + 4  : swap 4
+workspace : mod + 5          : move 5
+workspace : mod + shift + 5  : swap 5
+workspace : mod + 6          : move 6
+workspace : mod + shift + 6  : swap 6
+workspace : mod + 7          : move 7
+workspace : mod + shift + 7  : swap 7
+workspace : mod + 8          : move 8
+workspace : mod + shift + 8  : swap 8
+workspace : mod + 9          : move 9
+workspace : mod + shift + 9  : swap 9

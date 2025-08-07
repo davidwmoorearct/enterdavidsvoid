@@ -62,7 +62,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static char *tags[] = {"","", "", "","󰊻"};
+static char *tags[] = {"1","2","3","4","5","6","7","8","9"};
 
 static const char* eww[] = { "eww", "open" , "eww", NULL };
 
@@ -75,7 +75,7 @@ static const int tagschemes[] = {
     SchemeTag1, SchemeTag2, SchemeTag3, SchemeTag4, SchemeTag5
 };
 static const char *termcmd[] = {"st", NULL};
-static const char *browser[] = {"qutebrowser", NULL};
+static const char *browser[] = {"flatpak", "run", "com.microsoft.Edge", NULL};
 static const char *docs[] = {"void-docs", NULL};
 static const char *slock[] = {"slock", NULL};
 
@@ -242,11 +242,13 @@ static const Key keys[] = {
     { MODKEY,                           XK_e,       hidewin,        {0} },
     { MODKEY|ShiftMask,                 XK_e,       restorewin,     {0} },
     {MODKEY | Mod1Mask, XK_space, spawn, {.v = browser}},
-    {MODKEY | Mod1Mask | ControlMask, XK_b, spawn, SHCMD("nyxt app.ynab.com")},
+    {MODKEY | Mod1Mask | ControlMask, XK_b, spawn, SHCMD("qutebrowser app.ynab.com")},
     {MODKEY | Mod1Mask, XK_h, spawn, {.v = docs}},
     {Mod1Mask | ControlMask, XK_Delete, spawn, {.v = slock}},
     {MODKEY | Mod1Mask, XK_e, spawn, SHCMD("eww open eww")},
-    {MODKEY | Mod1Mask | ControlMask | ShiftMask, XK_l, spawn, SHCMD("nyxt linkedin.com")},
+    {MODKEY | Mod1Mask | ControlMask | ShiftMask, XK_l, spawn, SHCMD("qutebrowser linkedin.com")},
+    {MODKEY | ShiftMask, XK_w, spawn, SHCMD("word-o365")},
+    {MODKEY | ShiftMask, XK_e, spawn, SHCMD("excel-o365")},
     {MODKEY | Mod1Mask, XK_c, spawn, SHCMD("st ranger")},
     {MODKEY | ControlMask, XK_x, spawn, SHCMD("st nmtui")},
     {MODKEY |  Mod1Mask, XK_k, spawn, SHCMD("rofi -show calc -modi calc -no-show-match -no-sort -terse -no-history")},

@@ -1,4 +1,3 @@
-fastfetch
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -130,3 +129,9 @@ export PATH="$PATH:/home/davidwmoore/.local/bin"
 export XDG_CACHE_HOME="$HOME/.config"
 export EDITOR="hx"
 export VISUAL="hx"
+alias winappup="sudo docker compose --file ~/.config/winapps/compose.yaml start # Power on the Windows VM"
+alias winapppause="sudo docker compose --file ~/.config/winapps/compose.yaml pause # Pause the Windows VM"
+alias winappunpause="sudo docker compose --file ~/.config/winapps/compose.yaml unpause # Resume the Windows VM"
+alias winapprestart="sudo docker compose --file ~/.config/winapps/compose.yaml restart # Restart the Windows VM"
+alias winappstop="sudo docker compose --file ~/.config/winapps/compose.yaml stop # Gracefully shut down the Windows VM"
+alias winappkill="sudo docker compose --file ~/.config/winapps/compose.yaml kill # Force shut down the Windows VM"
