@@ -14,6 +14,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
+source "/Vivado/2025.2/Vivado/settings64.sh"
+export _JAVA_AWT_WM_NONREPARENTING=1
+export XLIB_SKIP_ARGB_VISUALS=1
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -110,6 +113,7 @@ alias mci="sudo make clean install"
 alias smci="source /home/davidwmoore/enterdavidsvoid/scripts/suckless.sh"
 alias xisrc="/home/davidwmoore/void-packages/xbps-src pkg -f"
 alias ls="ls -A"
+alias eclipse="sudo nohup /home/davidwmoore/Ac6/SystemWorkbench/eclipse"
 alias xrem="sudo xbps-remove"
 alias fpq="flatpak search"
 alias fpi="flatpak install -y"
@@ -136,3 +140,4 @@ alias winappunpause="sudo docker compose --file ~/.config/winapps/compose.yaml u
 alias winapprestart="sudo docker compose --file ~/.config/winapps/compose.yaml restart # Restart the Windows VM"
 alias winappstop="sudo docker compose --file ~/.config/winapps/compose.yaml stop # Gracefully shut down the Windows VM"
 alias winappkill="sudo docker compose --file ~/.config/winapps/compose.yaml kill # Force shut down the Windows VM"
+alias vivado="nohup vivado > /dev/null 2>&1 &"

@@ -53,7 +53,7 @@ wlan() {
 
 clock() {
 	printf "^c$black^ ^b$darkblue^ 󱑆 "
-	printf "^c$black^^b$blue^ $(date '+%H:%M:%S')  "
+	printf "^c$black^^b$blue^ $(date '+%H:%M')  "
 }
 
 while true; do

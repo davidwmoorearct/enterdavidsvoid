@@ -75,7 +75,7 @@ static const int tagschemes[] = {
     SchemeTag1, SchemeTag2, SchemeTag3, SchemeTag4, SchemeTag5
 };
 static const char *termcmd[] = {"st", NULL};
-static const char *browser[] = {"flatpak", "run", "com.microsoft.Edge", NULL};
+static const char *browser[] = {"zen", NULL};
 static const char *docs[] = {"void-docs", NULL};
 static const char *slock[] = {"slock", NULL};
 
@@ -91,7 +91,7 @@ static const Rule rules[] = {
      */
     /* class      instance    title       tags mask     iscentered   isfloating   monitor */
     { "Gimp",     NULL,       NULL,       0,            0,           1,           -1 },
-    { "Firefox",  NULL,       NULL,       1 << 8,       0,           0,           -1 },
+    { "Firefox",  NULL,       NULL,       1     ,       0,           0,           -1 },
     { "eww",      NULL,       NULL,       0,            0,           1,           -1 },
 };
 

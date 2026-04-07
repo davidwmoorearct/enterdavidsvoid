@@ -234,36 +234,28 @@ readpw(Display *dpy, struct xrandr *rr, struct lock **locks, int nscreens,
                 case XK_Return:
                 passwd[len] = '\0';
                 errno = 0;
-
-                /* 1. Decide which PAM service to use */
-                const char *selected_service;
-                if (len > 0) {
-                    /* User typed something -> Use standard password login */
-                    selected_service = pam_login;
-                    color = INPUT; // Keep it blue or change to a "Checking" color
-                } else {
-                    /* User typed nothing -> Trigger the Phone */
-                    selected_service = pam_service;
-                    color = INPUT; // Use your Purple color to signal "Check your phone"
-                }
-
+                
+                /* Visual feedback: Blue means "I'm checking something" */
+                color = INPUT; 
                 for (screen = 0; screen < nscreens; screen++) {
                     drawlogo(dpy, locks[screen], color);
                 }
                 XSync(dpy, False);
 
-                /* 2. Start PAM with the selected service */
-                retval = pam_start(selected_service, hash, &pamc, &pamh);
+                retval = pam_start(pam_service, hash, &pamc, &pamh);
                 if (retval == PAM_SUCCESS) {
+                    /* PAM will now run the stack we defined in /etc/pam.d/slock */
+                    /* If passwd is empty, phone auth usually triggers. */
+                    /* If passwd has text, phone auth fails and it hits system-auth. */
                     retval = pam_authenticate(pamh, 0);
                     if (retval == PAM_SUCCESS)
                         retval = pam_acct_mgmt(pamh, 0);
                 }
 
-                /* 3. Handle result */
                 if (retval == PAM_SUCCESS) {
                     running = 0;
                 } else {
+                    /* If both phone AND password fail, turn RED */
                     XBell(dpy, 100);
                     failure = 1;
                     color = FAILED;
@@ -271,8 +263,11 @@ readpw(Display *dpy, struct xrandr *rr, struct lock **locks, int nscreens,
                         drawlogo(dpy, locks[screen], color);
                     }
                 }
-
+                
                 pam_end(pamh, retval);
+                explicit_bzero(&passwd, sizeof(passwd));
+                len = 0;
+                break;            case XK_Escape:
                 explicit_bzero(&passwd, sizeof(passwd));
                 len = 0;
                 break;

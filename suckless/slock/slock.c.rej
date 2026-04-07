@@ -1,0 +1,25 @@
+--- slock.c
++++ slock.c
+@@ -18,16 +18,22 @@
+ #include <X11/keysym.h>
+ #include <X11/Xlib.h>
+ #include <X11/Xutil.h>
++#include <security/pam_appl.h>
++#include <security/pam_misc.h>
+ 
+ #include "arg.h"
+ #include "util.h"
+ 
+ char *argv0;
++static int pam_conv(int num_msg, const struct pam_message **msg, struct pam_response **resp, void *appdata_ptr);
++struct pam_conv pamc = {pam_conv, NULL};
++char passwd[256];
+ 
+ enum {
+ 	INIT,
+ 	INPUT,
+ 	FAILED,
++	PAM,
+ 	NUMCOLS
+ };
+ 
